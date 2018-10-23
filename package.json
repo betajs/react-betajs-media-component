@@ -1,0 +1,72 @@
+{
+  "name": "react-betajs-media-component",
+  "version": "0.0.1",
+  "description": "BetaJS react media player/recorder component for easy react application deployment",
+  "main": "build/index",
+  "scripts": {
+    "start": "concurrently \"npm run dev\"",
+    "dev": "webpack-dev-server --hot --inline",
+    "build": "npm run build:development && npm run build:production",
+    "build:development": "webpack",
+    "postbuild:development": "cp node_modules/betajs-media-components/demos/assets/betajs-flash.swf build",
+    "build:production": "NODE_ENV=production webpack -p",
+    "build:pack": "npm pack",
+    "rebuild-pack": "rm -rf build/ && npm run build",
+    "rebuild-dev-pack": "rm -rf build/",
+    "rebuild-npm-dev-pack": "rm -rf build/ && rm react-betajs-media-component-*.tgz && npm run build && npm pack",
+    "rebuild-demo-pack": "rm -rf build/ && rm react-betajs-media-component-*.tgz && npm run build && npm pack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/betajs/react-betajs-media-components"
+  },
+  "keywords": [
+    "react-component",
+    "react",
+    "ziggeo",
+    "betajs"
+  ],
+  "files": [
+    "build"
+  ],
+  "contributors": [
+    "Ziggeo",
+    "Oliver Friedmann"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/betajs/react-betajs-media-components/issues"
+  },
+  "homepage": "http://betajs.com",
+  "peerDependencies": {
+    "react": ">=15.3.2",
+    "react-dom": ">=15.3.2"
+  },
+  "dependencies": {
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2",
+    "prop-types": "^15.6.0",
+    "betajs": "~1.0.96",
+    "betajs-browser": "~1.0.65",
+    "betajs-dynamics": "~0.0.83",
+    "betajs-scoped": "~0.0.13",
+    "betajs-shims": "~0.0.12",
+    "betajs-flash": "~0.0.18",
+    "betajs-media": "~0.0.45",
+    "betajs-media-components": "~0.0.133"
+  },
+  "devDependencies": {
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.4",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^0.26.1",
+    "file-loader": "^0.11.2",
+    "postcss-cli": "^4.1.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.0.0"
+  }
+}
