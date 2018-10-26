@@ -14,6 +14,11 @@ export default class BetaJSVideoRecorder extends React.Component {
      * Prop Types
      */
     static propTypes = {
+        // Related only for react component not existing in BetaJS Media Component
+        "flashFile": string,
+        "locale": string,
+
+        // BetaJS Media Component options
         ...betaJSRecorderAttributesPropTypes,
         ...betaJSRecorderEmbeddingEventsPropTypes,
         ...betaJSCommonEmbeddingEventsPropTypes,
@@ -117,7 +122,7 @@ export default class BetaJSVideoRecorder extends React.Component {
      * @param context
      */
     initApplication (callback, context) {
-        const { locale, flashUrl } = this.props;
+        const { locale, flashFile } = this.props;
 
         try {
             // Set locale
@@ -125,9 +130,9 @@ export default class BetaJSVideoRecorder extends React.Component {
                 BetaJS.MediaComponents.Assets.strings.setLocale(locale);
 
             // Set external flash player
-            if (typeof flashUrl !== "undefined") {
+            if (typeof flashFile !== "undefined") {
                 BetaJS.Flash.options = {
-                    flashFile: flashUrl,
+                    flashFile: flashFile,
                     forceReload: true
                 };
             }

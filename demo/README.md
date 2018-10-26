@@ -13,12 +13,12 @@ Simple start:
 ```asp
  npm isntall
  HTTPS=true npm start
-
 ```
 
 Run virtual server for recorder:
 - Install [Nano Media Server](https://github.com/Jsonize/nano-media-server)
-- Generate local SSL sertificates and run:
+- You can manage your own server like in example `src\pages\recorder\RecorderPage` `componentDidMount` life cycle method.
+- Generate local SSL certificates and run (for player it's not mandatory):
 
 ```asp
 node node_modules/nano-media-server/server.js --staticserve . --port='5050' --sslkey='/path/to/key.pem' --sslcert='/path/to/cert.pem' --ffmpegopt='{ "test_info": { "encoders": ["aac"] } }' 
