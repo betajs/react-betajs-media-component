@@ -10,8 +10,6 @@ export const betaJSCommonMediaComponentPropTypes = {
 };
 
 export const betaJSRecorderAttributesPropTypes = {
-    "transCodeURI": string,
-
     "gallerysnapshots": number,
     "autorecord": bool,
     "autoplay": bool,
@@ -86,6 +84,11 @@ export const betaJSRecorderAttributesPropTypes = {
 };
 
 export const betaJSPlayerAttributesPropTypes = {
+    // Related only for react component not existing in BetaJS Media Component
+    "flashFile": string,
+    "locale": string,
+
+    // BetaJS Media Component options
     "width": oneOfType([number, string]),
     "height": oneOfType([number, string]),
     "popup-width": oneOfType([number, string]),

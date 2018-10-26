@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BetaJSVideoRecorder } from 'react-betajs-media-component';
+import { FLASH_FILE } from '../../constants';
 
 export default class RecorderPage extends Component {
 
@@ -21,6 +22,7 @@ export default class RecorderPage extends Component {
         let filename = "video-" + BetaJS.Time.now();
         let recorder = this.child.recorderInstance();
         let nanoMediaServer = 'https://localhost:5050';  // https://github.com/Jsonize/nano-media-server
+
         /**
          * Example of nano server run
          * node node_modules/nano-media-server/server.js --staticserve . --port='5050'
@@ -145,8 +147,9 @@ export default class RecorderPage extends Component {
                 <BetaJSVideoRecorder
                     height={'280'}
                     width={'420'}
-                    locale={'ru'}
+                    locale={'en'}
                     onRef={ref => (this.child = ref)}
+                    flashFile={FLASH_FILE}
                     preventReRenderOnUpdate={true}
                     flip-camera={false}
                     onPlaying={this.playing}

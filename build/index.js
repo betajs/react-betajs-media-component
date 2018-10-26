@@ -1,5 +1,5 @@
 /**
- * react-betajs-media-component - BetaJS react media player/recorder component for easy react application deployment
+ * react-betajs-media-component - A React component that records, play video and audio using BetaJS framework's Media Component Module for easy react application deployment. With a lot of useful events and themes.
  * @version v0.0.1
  * @link http://betajs.com
  * @license Apache-2.0
@@ -3373,8 +3373,6 @@ var betaJSCommonMediaComponentPropTypes = exports.betaJSCommonMediaComponentProp
 };
 
 var betaJSRecorderAttributesPropTypes = exports.betaJSRecorderAttributesPropTypes = {
-    "transCodeURI": _propTypes.string,
-
     "gallerysnapshots": _propTypes.number,
     "autorecord": _propTypes.bool,
     "autoplay": _propTypes.bool,
@@ -3449,6 +3447,11 @@ var betaJSRecorderAttributesPropTypes = exports.betaJSRecorderAttributesPropType
 };
 
 var betaJSPlayerAttributesPropTypes = exports.betaJSPlayerAttributesPropTypes = {
+    // Related only for react component not existing in BetaJS Media Component
+    "flashFile": _propTypes.string,
+    "locale": _propTypes.string,
+
+    // BetaJS Media Component options
     "width": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
     "height": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
     "popup-width": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
@@ -4869,7 +4872,7 @@ var BetaJSVideoPlayer = function (_Component) {
                 sources = _props.sources,
                 playlist = _props.playlist,
                 locale = _props.locale,
-                flashUrl = _props.flashUrl;
+                flashFile = _props.flashFile;
 
 
             try {
@@ -4877,12 +4880,13 @@ var BetaJSVideoPlayer = function (_Component) {
                 if (typeof locale !== "undefined") BetaJS.MediaComponents.Assets.strings.setLocale(locale);
 
                 // Set external flash player
-                if (typeof flashUrl !== "undefined") {
+                if (typeof flashFile !== "undefined") {
                     BetaJS.Flash.options = {
-                        flashFile: flashUrl,
+                        flashFile: flashFile,
                         forceReload: true
                     };
                 }
+
                 if (!source && !sources && !playlist) callback('Video source is mandatory. Please provide one of the props "source(-s)" or "playlist"', null);
             } catch (exe) {
                 console.warn(exe);
@@ -4931,7 +4935,12 @@ var BetaJSVideoPlayer = function (_Component) {
     return BetaJSVideoPlayer;
 }(_react.Component);
 
-BetaJSVideoPlayer.propTypes = _extends({}, _constants.betaJSPlayerAttributesPropTypes, _constants.betaJSPlayerEmbeddingEventsPropTypes, _constants.betaJSCommonEmbeddingEventsPropTypes, _constants.betaJSPlayerApplicationOptions, _constants.reactCustomOptions);
+BetaJSVideoPlayer.propTypes = _extends({
+    // Related only for react component not existing in BetaJS Media Component
+    "flashFile": _propTypes.string,
+    "locale": _propTypes.string
+
+}, _constants.betaJSPlayerAttributesPropTypes, _constants.betaJSPlayerEmbeddingEventsPropTypes, _constants.betaJSCommonEmbeddingEventsPropTypes, _constants.betaJSPlayerApplicationOptions, _constants.reactCustomOptions);
 BetaJSVideoPlayer.defaultProps = _extends({
     // Presentational parameters
     'width': 480,
@@ -5182,7 +5191,7 @@ var BetaJSVideoRecorder = function (_React$Component) {
         value: function initApplication(callback, context) {
             var _props = this.props,
                 locale = _props.locale,
-                flashUrl = _props.flashUrl;
+                flashFile = _props.flashFile;
 
 
             try {
@@ -5190,9 +5199,9 @@ var BetaJSVideoRecorder = function (_React$Component) {
                 if (typeof locale !== "undefined") BetaJS.MediaComponents.Assets.strings.setLocale(locale);
 
                 // Set external flash player
-                if (typeof flashUrl !== "undefined") {
+                if (typeof flashFile !== "undefined") {
                     BetaJS.Flash.options = {
-                        flashFile: flashUrl,
+                        flashFile: flashFile,
                         forceReload: true
                     };
                 }
@@ -5261,7 +5270,12 @@ var BetaJSVideoRecorder = function (_React$Component) {
 }(_react2.default.Component);
 
 BetaJSVideoRecorder.recorder = null;
-BetaJSVideoRecorder.propTypes = _extends({}, _constants.betaJSRecorderAttributesPropTypes, _constants.betaJSRecorderEmbeddingEventsPropTypes, _constants.betaJSCommonEmbeddingEventsPropTypes, _constants.betaJSRecorderApplicationOptions, _constants.reactCustomOptions);
+BetaJSVideoRecorder.propTypes = _extends({
+    // Related only for react component not existing in BetaJS Media Component
+    "flashFile": _propTypes.string,
+    "locale": _propTypes.string
+
+}, _constants.betaJSRecorderAttributesPropTypes, _constants.betaJSRecorderEmbeddingEventsPropTypes, _constants.betaJSCommonEmbeddingEventsPropTypes, _constants.betaJSRecorderApplicationOptions, _constants.reactCustomOptions);
 BetaJSVideoRecorder.defaultProps = _extends({
     // screen configuration for BetaJS extension
     chrome_extension_id: "meoefjkcilgjlkibnjjlfdgphacbeglk",

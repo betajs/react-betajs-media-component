@@ -14,6 +14,11 @@ export default class BetaJSVideoPlayer extends Component {
      * PropTypes
      */
     static propTypes = {
+        // Related only for react component not existing in BetaJS Media Component
+        "flashFile": string,
+        "locale": string,
+
+        // BetaJS Media Component options
         ...betaJSPlayerAttributesPropTypes,
         ...betaJSPlayerEmbeddingEventsPropTypes,
         ...betaJSCommonEmbeddingEventsPropTypes,
@@ -172,7 +177,7 @@ export default class BetaJSVideoPlayer extends Component {
     }, {});
 
     initApplication (callback, context) {
-        const { source, sources, playlist, locale, flashUrl } = this.props;
+        const { source, sources, playlist, locale, flashFile } = this.props;
 
         try {
             // Set locale
@@ -180,12 +185,13 @@ export default class BetaJSVideoPlayer extends Component {
                 BetaJS.MediaComponents.Assets.strings.setLocale(locale);
 
             // Set external flash player
-            if (typeof flashUrl !== "undefined") {
+            if (typeof flashFile !== "undefined") {
                 BetaJS.Flash.options = {
-                    flashFile: flashUrl,
+                    flashFile: flashFile,
                     forceReload: true
                 };
             }
+
             if (!source && !sources && !playlist)
                 callback('Video source is mandatory. Please provide one of the props "source(-s)" or "playlist"', null);
         } catch (exe) {
