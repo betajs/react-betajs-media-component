@@ -7,8 +7,8 @@ It's include with a lot of options and events:
  - ... soon will be added audio player/recorder also
 
 ## Demo
- - (Video Player)[https://94q7v38124.codesandbox.io/player]
- - (Video Recorder)[https://94q7v38124.codesandbox.io/recorder] -- Only initial view, you need run local server to see in action
+ - [Video Player](https://94q7v38124.codesandbox.io/player)
+ - [Video Recorder](https://94q7v38124.codesandbox.io/recorder) -- Only initial view, you need run local server to see in action
 
 ## Video Recorder
 To be able recorder start work as expected you need also virtual server, perfect for testing is [Nano Media Server](`https://github.com/Jsonize/nano-media-server`).
