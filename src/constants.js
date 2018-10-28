@@ -74,7 +74,6 @@ export const betaJSRecorderAttributesPropTypes = {
     "rerecordable": bool,
     "allowcancel": bool,
     "recordings": number,
-    "ready": bool,
     "orientation": bool,
     "stretch": bool,
     "audio-test-mandatory": bool,
@@ -109,7 +108,6 @@ export const betaJSPlayerAttributesPropTypes = {
     "volume": number, // 1.0,
     "title": string, // "",
     "initialseek": number, // null,
-    "fullscreened": bool, // false,
     "sharevideo": oneOfType([array, string]),
     "sharevideourl": string, // "",
     "visibilityfraction": number, // 0.8,
@@ -133,7 +131,6 @@ export const betaJSPlayerAttributesPropTypes = {
     "popup": bool, // false,
     "nofullscreen": bool, // false,
     "playfullscreenonmobile": bool, // false,
-    "ready": bool, // true,
     "stretch": bool, // false,
     "popup-stretch": bool, // false,
     "hideoninactivity": bool, // true,
@@ -141,14 +138,10 @@ export const betaJSPlayerAttributesPropTypes = {
     "preventinteraction": bool, // false,
     "skipinitial": bool, // false,
     "playwhenvisible": bool, // false,
-    "playedonce": bool, // false,
-    "manuallypaused": bool, // false,
     "disablepause": bool, // false,
     "disableseeking": bool, // false,
     "airplay": bool, // false,
-    "airplaybuttonvisible": bool, // false,
     "chromecast": bool, // false,
-    "castbuttonvisble": bool, // false,
     "skipseconds": number, // 5,
     "tracktags": arrayOf(object),
     "tracktagsstyled": bool, // true,
@@ -156,8 +149,6 @@ export const betaJSPlayerAttributesPropTypes = {
     "playercurrentspeed": number,
     "tracktaglang": string,
     "tracksshowselection": bool, // false,
-    "preventinteractionstatus": bool, // false, // need to prevent `Unexpected token: punc (()` Uglification issue
-    "settingsoptionsvisible": bool, // false, // If settings are open and visible
     "settingsoptions": arrayOf(object),
 
     "allowtexttrackupload": bool, // false,
@@ -167,7 +158,7 @@ export const betaJSPlayerAttributesPropTypes = {
     //     lang: 'en',
     //     label: 'English'
     // }],
-    "ttuploadervisible": bool, // false,
+    "ttuploadervisible": bool // false,
 
 // Presentational parameters
 // // handle special cases

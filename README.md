@@ -71,6 +71,87 @@ import {BetaJSVideoRecorder} from 'react-betajs-media-component'
   - onNoMicrophone
   - onRef
 ```
+##### Available Player Options
+```asp
+
+    "theme": string
+    'themecolor': string
+    'width': oneOfType([number, string])
+    'height': oneOfType([number, string]) 
+    "flashFile": string
+    "locale": string
+
+    "gallerysnapshots": number
+    "autorecord": bool
+    "autoplay": bool
+    "allowrecord": bool
+    "allowupload": bool
+    "allowcustomupload": bool
+    "manual-upload": bool
+    "camerafacefront": bool
+    "primaryrecord": bool
+    "allowscreen": bool
+    "nofullscreen": bool
+    "recordingwidth": oneOfType([number, string])
+    "recordingheight": oneOfType([number, string])
+    "minuploadingwidth": oneOfType([number, string])
+    "maxuploadingwidth": oneOfType([number, string])
+    "minuploadingheight": oneOfType([number, string])
+    "maxuploadingheight": oneOfType([number, string])
+    "countdown": number
+    "snapshotmax": number
+    "framerate-warning": number
+    "framerate": number
+    "audiobitrate": number
+    "videobitrate": number
+    "snapshottype": string
+    "picksnapshots": bool
+    "playbacksource": string
+    "screen": object
+    "playbackposter": string
+    "recordermode": bool
+    "skipinitial": bool
+    "skipinitialonrerecord": bool
+    "timelimit": number
+    "timeminlimit": number
+    "rtmpstreamtype": string
+    "rtmpmicrophonecodec": string
+    "webrtcstreaming": bool
+    "webrtconmobile": bool
+    "webrtcstreamingifnecessary": bool
+    "microphone-volume": number
+    "flip-camera": bool
+    "early-rerecord": bool
+    "custom-covershots": bool
+    "manualsubmit": bool
+    "allowedextensions": bool
+    "filesizelimit": bool
+    "faceoutline": bool
+    "display-timer": bool
+
+    /* Configuration */
+    "forceflash": bool
+    "noflash": bool
+    "onlyaudio": bool
+    "noaudio": bool
+    "flashincognitosupport": bool
+    "enforce-duration": bool
+    "localplayback": bool
+    "uploadoptions": object
+    "playerattrs": object
+    "shortMessage": bool
+
+    /* Options */
+    "rerecordable": bool
+    "allowcancel": bool
+    "recordings": number
+    "orientation": bool
+    "stretch": bool
+    "audio-test-mandatory": bool
+
+    "allowtexttrackupload": bool
+    "uploadlocales": arrayOf(object)
+```
 
 ### Recorder option Screen Recorder
 Screen Capture is currently supported by Firefox, Chrome and Opera.
@@ -120,8 +201,7 @@ import {BetaJSVideoPlayer} from 'react-betajs-media-component'
 ```
 
 ##### Available `events listeners` for Player
-```react2html
-   
+```react2html   
    - onPlaying
    - onPaused
    - onAttached
@@ -132,19 +212,95 @@ import {BetaJSVideoPlayer} from 'react-betajs-media-component'
    - onRef
 ```
 
+##### Available Player Options
+```asp
+    "theme": string
+    'themecolor': string
+    'width': oneOfType([number, string])
+    "popup-width": oneOfType([number, string])
+    "popup-height": oneOfType([number, string])
+    'height': oneOfType([number, string])
+    "locale": string  
+
+    /* Attributes */
+    "poster": string,
+    "source": string,
+    "sources": arrayOf(object)
+    "sourcefilter": object
+    "streams": arrayOf(object)
+    "currentstream": object
+    "playlist": oneOfType([array, object, string]),
+    "volume": number
+    "title": string
+    "initialseek": number
+    "sharevideo": oneOfType([array, string])
+    "sharevideourl": string
+    "visibilityfraction": number
+
+    /* Configuration */
+    "forceflash": bool
+    "noflash": bool
+    "reloadonplay": bool
+    "playonclick": bool
+
+    /* Ads */
+    "adprovider": string // "adsense", "vast"
+    "preroll": bool
+
+    /* Options */
+    "rerecordable": bool
+    "submittable": bool
+    "autoplay": bool
+    "preload": bool
+    "loop": bool
+    "popup": bool
+    "nofullscreen": bool
+    "playfullscreenonmobile": bool
+    "ready": bool
+    "stretch": bool
+    "popup-stretch": bool
+    "hideoninactivity": bool
+    "hidebarafter": number // 5000
+    "preventinteraction": bool
+    "skipinitial": bool
+    "playwhenvisible": bool
+    "disablepause": bool
+    "disableseeking": bool
+    "airplay": bool
+    "chromecast": bool
+    "skipseconds": number // 5
+    "tracktags": arrayOf(object)
+    "tracktagsstyled": bool
+    "showsettings": bool
+    "playercurrentspeed": number
+    "tracktaglang": string
+    "tracksshowselection": bool
+    "settingsoptions": arrayOf(object),
+
+    "allowtexttrackupload": bool, // false,
+    "uploadtexttracksvisible": bool, // false,
+    "uploadlocales": arrayOf(object),
+    //     [{
+    //     lang: 'en',
+    //     label: 'English'
+    // }],
+    "ttuploadervisible": bool, // false,
+
+```
+
 ### Themes
 Theme Names set with `theme`:
 ```
-- cube
-- elevate
-- minimalist
-- modern
-- space
-- theatre
+    - cube
+    - elevate
+    - minimalist
+    - modern
+    - space
+    - theatre
 ```
 Theme Colors set with `themecolor`:
 ```
-- red
-- blue
-- green
+    - red
+    - blue
+    - green
 ```
