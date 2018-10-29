@@ -14,6 +14,7 @@ It's include with a lot of options and events:
 To be able recorder start work as expected you need also virtual server, perfect for testing is [Nano Media Server](https://github.com/Jsonize/nano-media-server).
 After installation you can run below on terminal, which will start server on `https://localhost:5050`:
 
+Install once Nano Media Server: `npm i nano-media-server` on your project folder. Generate local SSL certificates ([Useful guide](https://medium.freecodecamp.org/how-to-get-https-working-on-your-local-development-environment-in-5-minutes-7af615770eec)). After you can run the below command by replacing your own certificate path to be able use the media server:
 ```$xslt
 node node_modules/nano-media-server/server.js --staticserve . --port='5050' --sslkey='/path/to/key.pem' --sslcert='/path/to/cert.pem' --ffmpegopt='{ "test_info": { "encoders": ["aac"] } }'
 ```
@@ -22,6 +23,35 @@ Example code:
 ```$xslt
 import React from 'react'
 import {BetaJSVideoRecorder} from 'react-betajs-media-component'
+...
+    /**
+     *
+     */
+    componentDidMount() {
+        let BetaJS = window.BetaJS;
+        let filename = "video-" + BetaJS.Time.now();
+        let recorder = this.child.recorderInstance();
+        let nanoMediaServer = 'https://localhost:5050'; 
+
+        recorder._prepareRecording = function () {
+            recorder.set("uploadoptions", {
+                image: {url: nanoMediaServer + "/files/" + filename + ".jpg"},
+                video: {url: nanoMediaServer + "/files/" + filename + ".webm"},
+                audio: {url: nanoMediaServer + "/files/" + filename + ".wav"}
+            });
+            recorder.set("playbacksource", nanoMediaServer + "/files/" + filename + ".mp4");
+            if (recorder.recorder)
+                recorder.set("playbackposter", nanoMediaServer + "/files/" + filename + ".jpg");
+            return BetaJS.Promise.value(true);
+        };
+
+        recorder._verifyRecording = function () {
+            return BetaJS.Ajax.Support.execute({
+                method: "POST",
+                uri: `${nanoMediaServer}/files/${filename}.webm/transcode/${filename}.mp4` + (recorder.recorder && recorder.recorder.localPlaybackSource().audio ? "?audio=" + filename + ".wav" : "")
+            });
+        };
+    }
 ...
     recorderRecording = () => {
         console.log('Recorder onRecording');
