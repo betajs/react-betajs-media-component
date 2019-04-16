@@ -150,6 +150,7 @@ export const betaJSPlayerAttributesPropTypes = {
     "tracktaglang": string,
     "tracksshowselection": bool, // false,
     "settingsoptions": arrayOf(object),
+    "createthumbnails": bool,
 
     "allowtexttrackupload": bool, // false,
     "uploadtexttracksvisible": bool, // false,

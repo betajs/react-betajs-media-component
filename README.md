@@ -10,6 +10,9 @@ It's include with a lot of options and events:
  - [Video Player](https://94q7v38124.codesandbox.io/player)
  - [Video Recorder](https://94q7v38124.codesandbox.io/recorder) -- Only initial view, you need run local server to see in action
 
+## Change Logs
+ - 0.1.0 - Added video upload and mobile recorder cover shot generator. Video thumbnails generation and view in player feature added. Mobile swipe on progressbar elements added
+
 ## Video Recorder
 To be able recorder start work as expected you need also virtual server, perfect for testing is [Nano Media Server](https://github.com/Jsonize/nano-media-server).
 After installation you can run below on terminal, which will start server on `https://localhost:5050`:
@@ -146,9 +149,6 @@ import {BetaJSVideoRecorder} from 'react-betajs-media-component'
     "timeminlimit": number
     "rtmpstreamtype": string
     "rtmpmicrophonecodec": string
-    "webrtcstreaming": bool
-    "webrtconmobile": bool
-    "webrtcstreamingifnecessary": bool
     "microphone-volume": number
     "flip-camera": bool
     "early-rerecord": bool
@@ -160,6 +160,11 @@ import {BetaJSVideoRecorder} from 'react-betajs-media-component'
     "display-timer": bool
 
     /* Configuration */
+    "webrtcstreaming": bool
+    "webrtconmobile": bool
+    "webrtcstreamingifnecessary": bool
+
+    /* Options */
     "forceflash": bool
     "noflash": bool
     "onlyaudio": bool
@@ -170,8 +175,7 @@ import {BetaJSVideoRecorder} from 'react-betajs-media-component'
     "uploadoptions": object
     "playerattrs": object
     "shortMessage": bool
-
-    /* Options */
+    "createthumbnails": bool // default true
     "rerecordable": bool
     "allowcancel": bool
     "recordings": number
