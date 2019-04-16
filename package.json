@@ -1,6 +1,6 @@
 {
   "name": "react-betajs-media-component",
-  "version": "0.0.8",
+  "version": "0.1.0",
   "description": "A React component that records, play video and audio using BetaJS framework's Media Component Module for easy react application deployment. With a lot of useful events and themes.",
   "main": "build/index",
   "scripts": {
@@ -54,17 +54,17 @@
     "react-dom": ">=15.3.2"
   },
   "dependencies": {
+    "betajs": "",
+    "betajs-browser": "",
+    "betajs-dynamics": "",
+    "betajs-flash": "",
+    "betajs-media": "",
+    "betajs-media-components": "",
+    "betajs-scoped": "",
+    "betajs-shims": "",
+    "prop-types": "^15.7.2",
     "react": "^15.3.2",
-    "react-dom": "^15.3.2",
-    "prop-types": "^15.6.0",
-    "betajs": "~1.0.96",
-    "betajs-browser": "~1.0.65",
-    "betajs-dynamics": "~0.0.83",
-    "betajs-scoped": "~0.0.13",
-    "betajs-shims": "~0.0.12",
-    "betajs-flash": "~0.0.18",
-    "betajs-media": "~0.0.45",
-    "betajs-media-components": "~0.0.133"
+    "react-dom": "^15.3.2"
   },
   "devDependencies": {
     "babel-core": "^6.13.2",

@@ -24,3 +24,6 @@ Run virtual server for recorder:
 node node_modules/nano-media-server/server.js --staticserve . --port='5050' --sslkey='/path/to/key.pem' --sslcert='/path/to/cert.pem' --ffmpegopt='{ "test_info": { "encoders": ["aac"] } }' 
 ```
 
+### Changelogs
+v 0.0.9 fixed bugs like fullscreen on player, stretch, camera detection on recorder. Added mobile recorder via WebRTC.
+
