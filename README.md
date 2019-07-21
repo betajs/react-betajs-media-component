@@ -11,7 +11,8 @@ It's include with a lot of options and events:
  - [Video Recorder](https://94q7v38124.codesandbox.io/recorder) -- Only initial view, you need run local server to see in action
 
 ## Change Logs
- - 0.1.0 - Added video upload and mobile recorder cover shot generator. Video thumbnails generation and view in player feature added. Mobile swipe on progressbar elements added
+ - 0.1.0 - Added video upload and mobile recorder cover shot generator. Video thumbnails generation and view in player feature added. Mobile swipe on progressbar elements added.
+ - 0.1.3 - Added features: a. Recorder pause/resume; b. Merger streams, for the case like: `screen recorder + camera` record. Both for WebRTC recorder only.
 
 ## Video Recorder
 To be able recorder start work as expected you need also virtual server, perfect for testing is [Nano Media Server](https://github.com/Jsonize/nano-media-server).
@@ -104,7 +105,7 @@ import {BetaJSVideoRecorder} from 'react-betajs-media-component'
   - onNoMicrophone
   - onRef
 ```
-##### Available Player Options
+##### Available Recorder Options
 ```asp
 
     "theme": string
@@ -185,6 +186,14 @@ import {BetaJSVideoRecorder} from 'react-betajs-media-component'
 
     "allowtexttrackupload": bool
     "uploadlocales": arrayOf(object)
+    
+    /** starting from 1.0.1 */
+    "allowmultistreams": bool (default: false)
+    "addstreampositionx": number (default: 5)
+    "addstreampositiony": number (default: 5)
+    "addstreampositionwidth": number (default: 120)
+    "addstreampositionheight": number (default: 95)
+    "pausable": bool (default: false)
 ```
 
 ### Recorder option Screen Recorder
