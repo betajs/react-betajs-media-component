@@ -413,7 +413,7 @@ module.exports = function (it) {
 /* 19 */
 /***/ (function(module, exports) {
 
-var core = module.exports = { version: '2.6.5' };
+var core = module.exports = { version: '2.6.9' };
 if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
 
 
@@ -3540,76 +3540,84 @@ var betaJSCommonMediaComponentPropTypes = exports.betaJSCommonMediaComponentProp
 };
 
 var betaJSRecorderAttributesPropTypes = exports.betaJSRecorderAttributesPropTypes = {
-    "gallerysnapshots": _propTypes.number,
+
+    /* Configuration */
+    "enforce-duration": _propTypes.bool,
+    "forceflash": _propTypes.bool,
+    "flashincognitosupport": _propTypes.bool,
+    "localplayback": _propTypes.bool,
+    "noaudio": _propTypes.bool,
+    "noflash": _propTypes.bool,
+    "onlyaudio": _propTypes.bool,
+    "playerattrs": _propTypes.object,
+    "shortMessage": _propTypes.bool,
+    "uploadoptions": _propTypes.object,
+
+    /* Settings */
+    "allowcancel": _propTypes.bool,
+    "allowcustomupload": _propTypes.bool,
+    "allowedextensions": _propTypes.bool,
+    "allowmultistreams": _propTypes.bool,
+    "allowscreen": _propTypes.bool,
+    "allowrecord": _propTypes.bool,
+    "allowtexttrackupload": _propTypes.bool,
+    "allowupload": _propTypes.bool,
+    "audio-test-mandatory": _propTypes.bool,
     "autorecord": _propTypes.bool,
     "autoplay": _propTypes.bool,
-    "allowrecord": _propTypes.bool,
-    "allowupload": _propTypes.bool,
-    "allowcustomupload": _propTypes.bool,
-    "manual-upload": _propTypes.bool,
     "camerafacefront": _propTypes.bool,
-    "primaryrecord": _propTypes.bool,
-    "allowscreen": _propTypes.bool,
+    "custom-covershots": _propTypes.bool,
+    "display-timer": _propTypes.bool,
+    "early-rerecord": _propTypes.bool,
+    "faceoutline": _propTypes.bool,
+    "flip-camera": _propTypes.bool,
+    "manual-upload": _propTypes.bool,
+    "manualsubmit": _propTypes.bool,
     "nofullscreen": _propTypes.bool,
-    "recordingwidth": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
-    "recordingheight": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
+    "orientation": _propTypes.bool,
+    "pausable": _propTypes.bool,
+    "picksnapshots": _propTypes.bool,
+    "primaryrecord": _propTypes.bool,
+    "recordermode": _propTypes.bool,
+    "rerecordable": _propTypes.bool,
+    "stretch": _propTypes.bool,
+    "screen": _propTypes.object,
+    "skipinitial": _propTypes.bool,
+    "skipinitialonrerecord": _propTypes.bool,
+    "webrtcstreaming": _propTypes.bool,
+    "webrtconmobile": _propTypes.bool,
+    "webrtcstreamingifnecessary": _propTypes.bool,
+
+    /* Options */
+    "addstreampositionx": _propTypes.number,
+    "addstreampositiony": _propTypes.number,
+    "addstreampositionwidth": _propTypes.number,
+    "addstreampositionheight": _propTypes.number,
+    "audiobitrate": _propTypes.number,
+    "countdown": _propTypes.number,
+    "filesizelimit": _propTypes.bool,
+    "framerate-warning": _propTypes.number,
+    "framerate": _propTypes.number,
+    "gallerysnapshots": _propTypes.number,
     "minuploadingwidth": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
     "maxuploadingwidth": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
     "minuploadingheight": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
     "maxuploadingheight": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
-    "countdown": _propTypes.number,
-    "snapshotmax": _propTypes.number,
-    "framerate-warning": _propTypes.number,
-    "framerate": _propTypes.number,
-    "audiobitrate": _propTypes.number,
-    "videobitrate": _propTypes.number,
-    "snapshottype": _propTypes.string,
-    "picksnapshots": _propTypes.bool,
+    "microphone-volume": _propTypes.number,
     "playbacksource": _propTypes.string,
-    "screen": _propTypes.object,
     "playbackposter": _propTypes.string,
-    "recordermode": _propTypes.bool,
-    "skipinitial": _propTypes.bool,
-    "skipinitialonrerecord": _propTypes.bool,
+    "recordings": _propTypes.number,
+    "recordingwidth": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
+    "recordingheight": (0, _propTypes.oneOfType)([_propTypes.number, _propTypes.string]),
+    "snapshotmax": _propTypes.number,
+    "snapshottype": _propTypes.string,
     "timelimit": _propTypes.number,
     "timeminlimit": _propTypes.number,
     "rtmpstreamtype": _propTypes.string,
     "rtmpmicrophonecodec": _propTypes.string,
-    "webrtcstreaming": _propTypes.bool,
-    "webrtconmobile": _propTypes.bool,
-    "webrtcstreamingifnecessary": _propTypes.bool,
-    "microphone-volume": _propTypes.number,
-    "flip-camera": _propTypes.bool,
-    "early-rerecord": _propTypes.bool,
-    "custom-covershots": _propTypes.bool,
-    "manualsubmit": _propTypes.bool,
-    "allowedextensions": _propTypes.bool,
-    "filesizelimit": _propTypes.bool,
-    "faceoutline": _propTypes.bool,
-    "display-timer": _propTypes.bool,
+    "uploadlocales": (0, _propTypes.arrayOf)(_propTypes.object),
+    "videobitrate": _propTypes.number
 
-    /* Configuration */
-    "forceflash": _propTypes.bool,
-    "noflash": _propTypes.bool,
-    "onlyaudio": _propTypes.bool,
-    "noaudio": _propTypes.bool,
-    "flashincognitosupport": _propTypes.bool,
-    "enforce-duration": _propTypes.bool,
-    "localplayback": _propTypes.bool,
-    "uploadoptions": _propTypes.object,
-    "playerattrs": _propTypes.object,
-    "shortMessage": _propTypes.bool,
-
-    /* Options */
-    "rerecordable": _propTypes.bool,
-    "allowcancel": _propTypes.bool,
-    "recordings": _propTypes.number,
-    "orientation": _propTypes.bool,
-    "stretch": _propTypes.bool,
-    "audio-test-mandatory": _propTypes.bool,
-
-    "allowtexttrackupload": _propTypes.bool,
-    "uploadlocales": (0, _propTypes.arrayOf)(_propTypes.object)
 };
 
 var betaJSPlayerAttributesPropTypes = exports.betaJSPlayerAttributesPropTypes = {
@@ -4395,6 +4403,7 @@ module.exports = Math.scale || function scale(x, inLow, inHigh, outLow, outHigh)
 "use strict";
 
 // 19.1.2.1 Object.assign(target, source, ...)
+var DESCRIPTORS = __webpack_require__(7);
 var getKeys = __webpack_require__(36);
 var gOPS = __webpack_require__(63);
 var pIE = __webpack_require__(52);
@@ -4424,7 +4433,10 @@ module.exports = !$assign || __webpack_require__(3)(function () {
     var length = keys.length;
     var j = 0;
     var key;
-    while (length > j) if (isEnum.call(S, key = keys[j++])) T[key] = S[key];
+    while (length > j) {
+      key = keys[j++];
+      if (!DESCRIPTORS || isEnum.call(S, key)) T[key] = S[key];
+    }
   } return T;
 } : $assign;
 
@@ -4500,6 +4512,7 @@ module.exports = function (object, names) {
 /* 121 */
 /***/ (function(module, exports, __webpack_require__) {
 
+var DESCRIPTORS = __webpack_require__(7);
 var getKeys = __webpack_require__(36);
 var toIObject = __webpack_require__(17);
 var isEnum = __webpack_require__(52).f;
@@ -4511,9 +4524,13 @@ module.exports = function (isEntries) {
     var i = 0;
     var result = [];
     var key;
-    while (length > i) if (isEnum.call(O, key = keys[i++])) {
-      result.push(isEntries ? [key, O[key]] : O[key]);
-    } return result;
+    while (length > i) {
+      key = keys[i++];
+      if (!DESCRIPTORS || isEnum.call(O, key)) {
+        result.push(isEntries ? [key, O[key]] : O[key]);
+      }
+    }
+    return result;
   };
 };
 
@@ -8544,12 +8561,14 @@ var enumKeys = __webpack_require__(148);
 var isArray = __webpack_require__(59);
 var anObject = __webpack_require__(1);
 var isObject = __webpack_require__(4);
+var toObject = __webpack_require__(9);
 var toIObject = __webpack_require__(17);
 var toPrimitive = __webpack_require__(26);
 var createDesc = __webpack_require__(37);
 var _create = __webpack_require__(34);
 var gOPNExt = __webpack_require__(119);
 var $GOPD = __webpack_require__(15);
+var $GOPS = __webpack_require__(63);
 var $DP = __webpack_require__(8);
 var $keys = __webpack_require__(36);
 var gOPD = $GOPD.f;
@@ -8566,7 +8585,7 @@ var SymbolRegistry = shared('symbol-registry');
 var AllSymbols = shared('symbols');
 var OPSymbols = shared('op-symbols');
 var ObjectProto = Object[PROTOTYPE];
-var USE_NATIVE = typeof $Symbol == 'function';
+var USE_NATIVE = typeof $Symbol == 'function' && !!$GOPS.f;
 var QObject = global.QObject;
 // Don't use setters in Qt Script, https://github.com/zloirock/core-js/issues/173
 var setter = !QObject || !QObject[PROTOTYPE] || !QObject[PROTOTYPE].findChild;
@@ -8676,7 +8695,7 @@ if (!USE_NATIVE) {
   $DP.f = $defineProperty;
   __webpack_require__(35).f = gOPNExt.f = $getOwnPropertyNames;
   __webpack_require__(52).f = $propertyIsEnumerable;
-  __webpack_require__(63).f = $getOwnPropertySymbols;
+  $GOPS.f = $getOwnPropertySymbols;
 
   if (DESCRIPTORS && !__webpack_require__(30)) {
     redefine(ObjectProto, 'propertyIsEnumerable', $propertyIsEnumerable, true);
@@ -8725,6 +8744,16 @@ $export($export.S + $export.F * !USE_NATIVE, 'Object', {
   getOwnPropertyNames: $getOwnPropertyNames,
   // 19.1.2.8 Object.getOwnPropertySymbols(O)
   getOwnPropertySymbols: $getOwnPropertySymbols
+});
+
+// Chrome 38 and 39 `Object.getOwnPropertySymbols` fails on primitives
+// https://bugs.chromium.org/p/v8/issues/detail?id=3443
+var FAILS_ON_PRIMITIVES = $fails(function () { $GOPS.f(1); });
+
+$export($export.S + $export.F * FAILS_ON_PRIMITIVES, 'Object', {
+  getOwnPropertySymbols: function getOwnPropertySymbols(it) {
+    return $GOPS.f(toObject(it));
+  }
 });
 
 // 24.3.2 JSON.stringify(value [, replacer [, space]])
